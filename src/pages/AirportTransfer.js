@@ -38,7 +38,7 @@ const AirportTransfer = () => {
               </p>
               <span>
                 {" "}
-                <FaLongArrowAltRight className="icon" /> 1-3 osoby: 90 zł
+                <FaLongArrowAltRight className="icon" /> 1-3 osoby: 100 zł
               </span>
               <span>
                 <FaLongArrowAltRight className="icon" /> 4-6 osób: 140 zł
@@ -120,7 +120,7 @@ const AirportTransfer = () => {
               </p>
               <span>
                 {" "}
-                <FaLongArrowAltRight className="icon" /> 1-3 people: 90 PLN
+                <FaLongArrowAltRight className="icon" /> 1-3 people: 100 PLN
               </span>
               <span>
                 <FaLongArrowAltRight className="icon" /> 4-6 people: 140 PLN

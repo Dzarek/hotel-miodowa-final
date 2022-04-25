@@ -794,6 +794,7 @@ const Wrapper2 = styled.div`
   .showMain-Nav {
     transition: 0.7s;
     transform: translateY(0vh);
+    background-size: 100vw 100vh;
   }
 
   .menuSmall {
