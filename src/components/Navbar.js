@@ -280,8 +280,8 @@ const Navbar = ({ showMenu, setShowMenu, showBooking, setShowBooking }) => {
               !showMenu ? "main-navOutside" : "main-navOutside showMain-Nav"
             }
           >
-            {/* <div className="main-nav"> */}
-            <div className={!showMenu ? "main-nav" : "main-nav showMain-Nav"}>
+            <div className="main-nav">
+              {/* <div className={!showMenu ? "main-nav" : "main-nav showMain-Nav"}> */}
               <div
                 onClick={() => {
                   scroll.scrollToTop();
