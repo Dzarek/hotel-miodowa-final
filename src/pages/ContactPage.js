@@ -101,6 +101,7 @@ const ContactPage = () => {
             <br />
             <p>IBAN: PL 57 1140 1078 0000 3100 1500 1005</p>
             <p>SWIFT/BIC kod: BREXPLPWMBK</p>
+            <p>NIP: 6321939267</p>
           </div>
         </section>
       </div>
