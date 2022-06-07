@@ -43,7 +43,7 @@ const ServicesHome = () => {
               <GiMeal className="icon" />
               <h4>Śniadania</h4>
               <p>
-                Śniadania dla każdego gościa serwowane w godzinach 7:30-10:00.
+                Śniadania dla każdego gościa serwowane w godzinach 7:00-10:00.
               </p>
               <img src={restauracjaImg} alt="" />
             </span>
@@ -113,7 +113,7 @@ const ServicesHome = () => {
             <span className="oneService">
               <GiMeal className="icon" />
               <h4>Breakfast</h4>
-              <p>Breakfasts for each guest are served from 7:30 to 10:00. </p>
+              <p>Breakfasts for each guest are served from 7:00 to 10:00. </p>
               <img src={restauracjaImg} alt="" />
             </span>
             <span className="oneService">

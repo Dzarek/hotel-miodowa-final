@@ -51,23 +51,45 @@ const BookingRoom = ({ showBooking, setShowBooking }) => {
   }
 
   let maxPeople = rooms * 4;
-  const peoplePerRoom = Math.floor(people / rooms);
-  const moduloPeople = people % rooms;
-  const numberRooms = `{"count":${peoplePerRoom}},`;
-  const numberRoomsRepeat = numberRooms.repeat(rooms).slice(0, -1);
-  const lastChar = Number(numberRoomsRepeat[numberRoomsRepeat.length - 2]);
-  let lastCharUpdate = lastChar + moduloPeople;
-  lastCharUpdate = lastCharUpdate.toString();
-  const numberRoomsRepeat2 = numberRoomsRepeat.slice(0, -2);
-  const finalRoomsRepeat = numberRoomsRepeat2.concat(lastCharUpdate, "}");
+  // const peoplePerRoom = Math.floor(people / rooms);
+  // const moduloPeople = people % rooms;
+  // const numberRooms = `{"count":${peoplePerRoom}},`;
+  // const numberRoomsRepeat = numberRooms.repeat(rooms).slice(0, -1);
+  // const lastChar = Number(numberRoomsRepeat[numberRoomsRepeat.length - 2]);
+  // let lastCharUpdate = lastChar + moduloPeople;
+  // lastCharUpdate = lastCharUpdate.toString();
+  // const numberRoomsRepeat2 = numberRoomsRepeat.slice(0, -2);
+  // const finalRoomsRepeat = numberRoomsRepeat2.concat(lastCharUpdate, "}");
+
   useEffect(() => {
     setPeople(rooms * 1);
     // eslint-disable-next-line
   }, [maxPeople]);
 
-  const url2 = `https://be-v2.kwhotel.com/${
+  const firstNumberA =
+    people % rooms === 0 ? people / rooms : (people % rooms) + 1;
+  const nextNumberA = people - firstNumberA;
+  const numberOfRepeats = rooms - 1;
+  const repeatCode = `%252C%2522categoryCount%2522%253A%255B%255D%257D%252C%257B%2522count%2522%253A${
+    nextNumberA / numberOfRepeats
+  }`;
+  const repeatCodeFinal = repeatCode.repeat(numberOfRepeats);
+
+  const occupancyValue = `%255B%257B%2522count%2522%253A${firstNumberA}${
+    rooms > 1
+      ? repeatCodeFinal +
+        "%252C%2522categoryCount%2522%253A%255B%255D%257D%255D"
+      : "%252C%2522categoryCount%2522%253A%255B%255D%257D%255D"
+  }`;
+
+  const url2 = `https://cloud.kwhotel.com/be/${
     polish ? "pl" : "en"
-  }/e22dd1d13499cfd0eed19a6c108b5d22/0?checkIn=${checkInDate}&checkOut=${checkOutDate}&occupancy=[${finalRoomsRepeat}]`;
+  }/1/d85175fc-963f-49d2-989e-a33adb6939bc?checkIn=${checkInDate}&checkOut=${checkOutDate}&occupancy=${occupancyValue}`;
+
+  // const url2 = `https://be-v2.kwhotel.com/${
+  //   polish ? "pl" : "en"
+  // }/e22dd1d13499cfd0eed19a6c108b5d22/0?checkIn=${checkInDate}&checkOut=${checkOutDate}&occupancy=[${finalRoomsRepeat}]`;
+
   const urlHash = `#`;
 
   return (
