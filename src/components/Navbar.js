@@ -80,6 +80,12 @@ const Navbar = ({ showMenu, setShowMenu, showBooking, setShowBooking }) => {
 
   const isMobile = width <= 800;
 
+  const redirectToKWBooking = () => {
+    window.location.href = `https://cloud.kwhotel.com/be/${
+      polish ? "pl" : "en"
+    }/1/d85175fc-963f-49d2-989e-a33adb6939bc`;
+  };
+
   return (
     <>
       {!isMobile ? (
@@ -465,10 +471,10 @@ const Navbar = ({ showMenu, setShowMenu, showBooking, setShowBooking }) => {
               <div className="menuSmall">
                 <button
                   onClick={() => {
-                    setShowBooking(true);
+                    redirectToKWBooking();
                   }}
                   className="bookBtn"
-                  style={!showBooking ? { opacity: 1 } : { opacity: 0 }}
+                  // style={!showBooking ? { opacity: 1 } : { opacity: 0 }}
                 >
                   <FaConciergeBell className="bell" />
                   <h3>{polish ? "Rezerwacja" : "Reservation"}</h3>{" "}

@@ -96,7 +96,7 @@ const Footer = () => {
               <p>
                 <MdMail className="iconReact" /> rezerwacja@hotelmiodowa.pl
               </p>
-              <a href="https://www.facebook.com/aparthotel.miodowa.14">
+              <a href="https://www.facebook.com/hotel.miodowa">
                 <FaFacebook className="iconReact" /> hotel miodowa
               </a>
             </div>

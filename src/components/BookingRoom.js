@@ -20,7 +20,7 @@ const BookingRoom = ({ showBooking, setShowBooking }) => {
   const { polish } = context;
   const [rooms, setRooms] = useState(1);
   const [people, setPeople] = useState(2);
-  const [showKW, setShowKW] = useState(false);
+  // const [showKW, setShowKW] = useState(false);
 
   const [startDate, setStartDate] = useState(today);
   const [endDate, setEndDate] = useState(tomorrow);
@@ -36,12 +36,10 @@ const BookingRoom = ({ showBooking, setShowBooking }) => {
   const handleChildren = (e) => {
     setPeople(e.target.value);
   };
-  const closeReservation = () => {
-    setShowBooking(false);
-    setShowKW(false);
-    // setStartDate(today);
-    // setEndDate(tomorrow);
-  };
+  // const closeReservation = () => {
+  //   setShowBooking(false);
+  //   setShowKW(false);
+  // };
 
   let checkInDate = today.toISOString().slice(0, 10);
   let checkOutDate = tomorrow.toISOString().slice(0, 10);
@@ -90,7 +88,7 @@ const BookingRoom = ({ showBooking, setShowBooking }) => {
   //   polish ? "pl" : "en"
   // }/e22dd1d13499cfd0eed19a6c108b5d22/0?checkIn=${checkInDate}&checkOut=${checkOutDate}&occupancy=[${finalRoomsRepeat}]`;
 
-  const urlHash = `#`;
+  // const urlHash = `#`;
 
   return (
     <>
@@ -161,8 +159,8 @@ const BookingRoom = ({ showBooking, setShowBooking }) => {
               </div>
             </div>
             <a
-              href={urlHash}
-              onClick={() => setShowKW(true)}
+              href={url2}
+              // onClick={() => setShowKW(true)}
               className="reserveBtnNow"
               style={{ cursor: "pointer" }}
             >
@@ -170,22 +168,23 @@ const BookingRoom = ({ showBooking, setShowBooking }) => {
             </a>
           </form>
         </div>
-        {showKW && (
+        {/* {showKW && (
           <div className="kwBooking">
             <h3>{polish ? "Rezerwacja" : "Reservation"}</h3>
             <iframe src={url2} frameborder="0" title="KWReservation"></iframe>
             <ImCross onClick={closeReservation} />
           </div>
-        )}
+        )} */}
       </Wrapper>
       <Wrapper2>
-        {showBooking && (
+        {/* {showBooking && redirectToKWBooking()} */}
+        {/* {showBooking && (
           <div className="kwBooking">
             <h3>{polish ? "Rezerwacja" : "Reservation"}</h3>
             <iframe src={url2} frameborder="0" title="KWReservation"></iframe>
             <ImCross onClick={closeReservation} />
           </div>
-        )}
+        )} */}
       </Wrapper2>
     </>
   );
