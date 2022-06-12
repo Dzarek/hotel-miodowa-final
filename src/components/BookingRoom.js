@@ -60,7 +60,7 @@ const BookingRoom = ({ showBooking, setShowBooking }) => {
   // const finalRoomsRepeat = numberRoomsRepeat2.concat(lastCharUpdate, "}");
 
   useEffect(() => {
-    setPeople(rooms * 1);
+    setPeople(rooms * 2);
     // eslint-disable-next-line
   }, [maxPeople]);
 

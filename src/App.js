@@ -29,6 +29,7 @@ import SingleRoomPage from "./pages/SingleRoomPage";
 import AllRoomsPage from "./pages/AllRoomsPage";
 
 import ErrorPage from "./pages/ErrorPage";
+import Thanks from "./pages/Thanks";
 
 import { useGlobalContext } from "./context";
 import { createGlobalStyle } from "styled-components";
@@ -176,6 +177,7 @@ function App() {
               element={<RegulationsPage />}
             ></Route>
             <Route path="/kontakt/rodo&cookies" element={<RodoPage />}></Route>
+            <Route path="/potwierdzenie" element={<Thanks />}></Route>
           </Routes>
         </div>
         <Footer />
