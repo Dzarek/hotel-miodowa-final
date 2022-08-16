@@ -84,15 +84,15 @@ const AirportTransfer = () => {
               <p>Organizujemy wycieczki:</p>
               <span>
                 <FaLongArrowAltRight className="icon" /> do Auchwitz Birkenau:
-                koszt od 200 zł za osobę,
+                koszt od 220 zł za osobę,
               </span>
               <span>
                 <FaLongArrowAltRight className="icon" /> do Kopalni Soli w
-                Wieliczce: koszt od 200 zł za osobę,
+                Wieliczce: koszt od 220 zł za osobę,
               </span>
               <span>
                 <FaLongArrowAltRight className="icon" /> do Zakopanego: koszt od
-                350 zł za osobę,
+                400 zł za osobę,
               </span>
               <p>
                 Opłata obejmuje: transfer do celu i z powrotem do hotelu,
@@ -168,14 +168,14 @@ const AirportTransfer = () => {
               <p>We organize trips:</p>
               <span>
                 <FaLongArrowAltRight className="icon" /> to Auchwitz Birkenau:
-                price 200 PLN per person,
+                price 220 PLN per person,
               </span>
               <span>
                 <FaLongArrowAltRight className="icon" /> to Salt Mine in
-                Wieliczce: price 200 PLN per person,
+                Wieliczce: price 220 PLN per person,
               </span>
               <span>
-                <FaLongArrowAltRight className="icon" /> to Zakopane: price 350
+                <FaLongArrowAltRight className="icon" /> to Zakopane: price 400
                 PLN per person,
               </span>
               <p>

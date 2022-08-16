@@ -84,15 +84,15 @@ const AllRoomsPage = ({ context }) => {
             </ul>
             <ul>
               <li>
-                <span>apartament SUPERIOR</span> - 2 pojedyczne łóżka i
+                <span>apartament SUPERIOR</span> - 2 pojedyncze łóżka i
                 rozkładana sofa
               </li>
               <li>
-                <span>apartament STUDIO</span> - 2 pojedyczne łóżka i rozkładana
+                <span>apartament STUDIO</span> - 2 pojedyncze łóżka i rozkładana
                 sofa
               </li>
               <li>
-                <span>apartament DELUXE</span> - 2 pojedyczne łóżka i rozkładana
+                <span>apartament DELUXE</span> - 2 pojedyncze łóżka i rozkładana
                 sofa
               </li>
             </ul>
