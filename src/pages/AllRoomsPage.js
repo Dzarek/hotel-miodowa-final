@@ -78,7 +78,7 @@ const AllRoomsPage = ({ context }) => {
                 <span>pokój 2-osobowy DOUBLE</span> - 1 łóżko małżeńskie
               </li>
               <li>
-                <span>pokój 2-osobowy PREMIUM</span> - 2 pojedyczne łóżka i
+                <span>pokój 2-osobowy PREMIUM</span> - 2 pojedyncze łóżka i
                 rozkładana sofa
               </li>
             </ul>
