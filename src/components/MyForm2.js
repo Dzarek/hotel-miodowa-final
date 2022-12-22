@@ -3,43 +3,52 @@ import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 import { useContext } from "react";
 import { RoomContext } from "../roomContext";
+import emailjs from "emailjs-com";
 
 const MyForm2 = () => {
   const context = useContext(RoomContext);
   const { polish } = context;
+
   const [status, setStatus] = useState("");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [text, setText] = useState("");
   const [box, setBox] = useState(false);
 
+  // const mailBody = polish
+
+  //   ? `IMIĘ I NAZWISKO:  ` +
+  //     `<strong>${name}</strong>` +
+  //     `<br/> <br/> ADRES EMAIL:  ` +
+  //     `<strong>${email}</strong>` +
+  //     `<br/> <br/> WIADOMOŚĆ:  ` +
+  //     `<strong>${text}</strong>`
+  //   : `NAME:  ` +
+  //     `<strong>${name}</strong>` +
+  //     `<br/> <br/> EMAIL:  ` +
+  //     `<strong>${email}</strong>` +
+  //     `<br/> <br/> MESSAGE:  ` +
+  //     `<strong>${text}</strong>`;
+  // const mailSubject = polish
+  //   ? `hotelmiodowa.pl, Wiadomość od ${name}`
+  //   : `hotelmiodowa.pl, Message from ${name}`;
   // const handleWowSubmit = async (e) => {
   //   e.preventDefault();
-  //
-  //   await fetch("https://formsubmit.co/ajax/dzarekcoding@gmail.com", {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //       Accept: "application/json",
-  //     },
-  //     body: JSON.stringify({
-  //       NADAWCA: name,
-  //       EMAIL: email,
-  //       WIADOMOŚĆ: text,
-  //       _template: "table",
-  //       _subject: `hotelmiodowa.pl, wiadomość od ${name}`,
-  //       _replyto: email,
-  //     }),
-  //   })
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       if (data.success) {
-  //         setStatus("SUCCESS");
-  //       } else {
-  //         setStatus("ERROR");
-  //       }
-  //     })
-  //     .catch((error) => console.log(error));
+  //   window.Email.send({
+  //     Host: "smtp.gmail.com",
+  //     Username: "miodowa.hotel@gmail.com",
+  //     Password: `uwzujfozvtdekrxc`,
+  //     To: ["rezerwacja@hotelmiodowa.pl"],
+  //     From: email,
+  //     Subject: mailSubject,
+  //     Body: mailBody,
+  //   }).then((data) => {
+  //     if (data === "OK") {
+  //       setStatus("SUCCESS");
+  //     } else {
+  //       setStatus("ERROR");
+  //     }
+  //   });
   //   setTimeout(() => {
   //     setStatus("");
   //     setName("");
@@ -49,51 +58,43 @@ const MyForm2 = () => {
   //   }, 3000);
   // };
 
-  const mailBody = polish
-    ? `IMIĘ I NAZWISKO:  ` +
-      `<strong>${name}</strong>` +
-      `<br/> <br/> ADRES EMAIL:  ` +
-      `<strong>${email}</strong>` +
-      `<br/> <br/> WIADOMOŚĆ:  ` +
-      `<strong>${text}</strong>`
-    : `NAME:  ` +
-      `<strong>${name}</strong>` +
-      `<br/> <br/> EMAIL:  ` +
-      `<strong>${email}</strong>` +
-      `<br/> <br/> MESSAGE:  ` +
-      `<strong>${text}</strong>`;
-  const mailSubject = polish
-    ? `hotelmiodowa.pl, Wiadomość od ${name}`
-    : `hotelmiodowa.pl, Message from ${name}`;
-  const handleWowSubmit = async (e) => {
+  const sendEmail = (e) => {
     e.preventDefault();
-    window.Email.send({
-      Host: "smtp.gmail.com",
-      Username: "miodowa.hotel@gmail.com",
-      Password: `uwzujfozvtdekrxc`,
-      To: ["rezerwacja@hotelmiodowa.pl"],
-      From: email,
-      Subject: mailSubject,
-      Body: mailBody,
-    }).then((data) => {
-      if (data === "OK") {
-        setStatus("SUCCESS");
-      } else {
-        setStatus("ERROR");
-      }
-    });
-    setTimeout(() => {
-      setStatus("");
-      setName("");
-      setEmail("");
-      setText("");
-      setBox(false);
-    }, 3000);
+    emailjs
+      .sendForm(
+        "service_8ne15ac",
+        "template_q8lwfai",
+        e.target,
+        "T1T6L3gac_WHtIJ63"
+      )
+      .then(
+        () => {
+          e.target.reset();
+          setStatus("SUCCESS");
+          setTimeout(() => {
+            setStatus("");
+            setName("");
+            setEmail("");
+            setText("");
+            setBox(false);
+          }, 3000);
+        },
+        () => {
+          setStatus("ERROR");
+          setTimeout(() => {
+            setStatus("");
+            setName("");
+            setEmail("");
+            setText("");
+            setBox(false);
+          }, 3000);
+        }
+      );
   };
 
   return (
     <>
-      <Wrapper onSubmit={(e) => handleWowSubmit(e)}>
+      <Wrapper onSubmit={(e) => sendEmail(e)}>
         <h2>
           {polish
             ? "Jeśli chcesz dokonać rezerwacji lub masz jakieś pytania, śmiało napisz do nas!"
