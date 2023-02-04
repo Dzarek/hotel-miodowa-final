@@ -48,6 +48,10 @@ const RegulationsPage = () => {
             koniecznością uiszczenia opłaty za apartament według stawek ujętych
             w cenniku bez gwarancji zostania w apartamencie.
           </p>
+          <p>
+            4. Dokonanie rezerwacji w Hotel Miodowa oznacza zaakceptowanie
+            regulaminu.
+          </p>
           <h3>§ 2</h3>
           <p>
             1. Życzenia przedłużenia pobytu Gość powinien zgłosić w recepcji do
